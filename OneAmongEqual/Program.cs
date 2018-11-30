@@ -45,9 +45,8 @@ namespace OneAmongEqual
         }
         static void MainMethod(string PATH)
         {
-            FileInfo[] files = new DirectoryInfo(PATH).GetFiles().ToArray();
-            int v = files.Length;
-            if (v > 1)
+            
+            if (new DirectoryInfo(PATH).GetFiles().Length > 1)
             {
                 int j = 0;
 
