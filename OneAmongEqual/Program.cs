@@ -29,10 +29,10 @@ namespace OneAmongEqual
         static void Method0(string PATH, int j)
         {
             FileInfo[] files = new DirectoryInfo(PATH).GetFiles().ToArray();
-            if (j<files.Length -1)
+            if (j < files.Length - 1)
             {
                 string path1 = PATH + @"\" + files[j].Name;
-                for (int i = j+1; i < files.Length - 1; i++)
+                for (int i = j + 1; i < files.Length; i++)
                 {
                     string path2 = PATH + @"\" + files[i].Name;
                     if (FileEquals(path1, path2))
@@ -40,12 +40,12 @@ namespace OneAmongEqual
                         files[i].Delete();
                     }
                 }
-                
+
             }
         }
         static void MainMethod(string PATH)
         {
-            
+
             if (new DirectoryInfo(PATH).GetFiles().Length > 1)
             {
                 int j = 0;
@@ -61,7 +61,7 @@ namespace OneAmongEqual
         }
         static void Main(string[] args)
         {
-            string PATH = @"D:\L";
+            string PATH = @"D:\S";
             // write the path
             MainMethod(PATH);
             Console.ReadKey();
